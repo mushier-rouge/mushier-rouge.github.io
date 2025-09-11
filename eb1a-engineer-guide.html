@@ -36,6 +36,106 @@
             background-color: #fafafa;
             border: 1px solid #e5e7eb;
         }
+        
+        /* New styles for better organization */
+        .toc-container {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .toc-link {
+            color: #6b7280;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            display: block;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+            transition: all 0.2s;
+        }
+        .toc-link:hover {
+            color: #14B8A6;
+            border-left-color: #14B8A6;
+            background: #f9fafb;
+        }
+        
+        .criterion-card {
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .criterion-1 { border-left: 5px solid #3b82f6; }
+        .criterion-2 { border-left: 5px solid #10b981; }
+        .criterion-3 { border-left: 5px solid #8b5cf6; }
+        .criterion-4 { border-left: 5px solid #f59e0b; }
+        
+        .part-header {
+            background: #f3f4f6;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            margin: 1.5rem 0 1rem 0;
+            font-weight: 600;
+        }
+        
+        .criterion-label {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .label-1 { background: #dbeafe; color: #1e40af; }
+        .label-2 { background: #d1fae5; color: #065f46; }
+        .label-3 { background: #ede9fe; color: #5b21b6; }
+        .label-4 { background: #fed7aa; color: #92400e; }
+        
+        /* Sticky sidebar TOC */
+        .sidebar-toc {
+            position: sticky;
+            top: 2rem;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+        .sidebar-toc::-webkit-scrollbar {
+            width: 4px;
+        }
+        .sidebar-toc::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .sidebar-toc::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 2px;
+        }
+        .toc-item {
+            padding: 0.375rem 0;
+            margin-left: 1rem;
+            border-left: 2px solid #e5e7eb;
+            padding-left: 1rem;
+            color: #6b7280;
+            text-decoration: none;
+            display: block;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .toc-item:hover {
+            color: #14B8A6;
+            border-left-color: #14B8A6;
+        }
+        .toc-item.active {
+            color: #14B8A6;
+            border-left-color: #14B8A6;
+            font-weight: 500;
+        }
+        .toc-section {
+            font-weight: 600;
+            color: #374151;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
     </style>
     
     <!-- Google Analytics (GA4) -->
@@ -52,7 +152,33 @@
         <h1 class="text-2xl font-light">Sanjay Devnani</h1>
     </nav>
     
-    <main class="max-w-4xl mx-auto p-6">
+    <div class="max-w-7xl mx-auto px-6 flex gap-8">
+        <!-- Sidebar TOC -->
+        <aside class="hidden lg:block w-64 flex-shrink-0">
+            <div class="sidebar-toc bg-white rounded-lg p-4 border border-gray-200">
+                <h3 class="font-semibold text-gray-900 mb-4">Contents</h3>
+                
+                <div class="toc-section">Getting Started</div>
+                <a href="#reality-check" class="toc-item">The Reality Check</a>
+                
+                <div class="toc-section">Evidence Criteria</div>
+                <a href="#criterion-1" class="toc-item">1. Leading/Critical Role</a>
+                <a href="#criterion-2" class="toc-item">2. Original Contributions</a>
+                <a href="#criterion-3" class="toc-item">3. High Salary</a>
+                <a href="#criterion-4" class="toc-item">4. Judging Others</a>
+                
+                <div class="toc-section">Practical Advice</div>
+                <a href="#evidence" class="toc-item">Evidence Collection</a>
+                <a href="#corroboration" class="toc-item">Independent Corroboration</a>
+                <a href="#tips" class="toc-item">Practical Tips</a>
+                <a href="#timeline" class="toc-item">Timeline & Cost</a>
+                <a href="#worth-it" class="toc-item">Was It Worth It?</a>
+                <a href="#final" class="toc-item">Final Thoughts</a>
+            </div>
+        </aside>
+        
+        <!-- Main content -->
+        <main class="flex-1 max-w-4xl">
         <article>
             <header class="mb-12">
                 <h1 class="text-3xl font-light mb-4">EB-1A Through Industry Impact</h1>
@@ -65,7 +191,7 @@
                 <p class="text-gray-700 mb-4"><strong>Important clarification:</strong> This guide is about documenting and presenting work you've already done - not about what you need to do to become qualified. If you're a senior engineer who's been shipping impactful work for years, you might already be at the top of your field. The challenge is proving it. This post shares how I collected evidence of my existing achievements and presented them effectively.</p>
             </section>
 
-            <section class="mb-8">
+            <section id="reality-check" class="mb-8">
                 <h2 class="text-2xl mb-6">The Reality Check</h2>
 
     <p class="text-gray-700 mb-4">First, let's be clear: EB-1A has a high bar. You need to prove "extraordinary ability" and meet at least 3 of <a href="https://www.uscis.gov/policy-manual/volume-6-part-f-chapter-2" target="_blank" class="text-teal-600 hover:underline">10 criteria</a>. But here's what I learned - <span class="bg-yellow-100 px-1">extraordinary doesn't mean impossible</span>. It means documented, impactful, and recognized by your peers.</p>
@@ -79,13 +205,13 @@
                 </ul>
                 <p class="text-gray-700 mb-4">These four work well together because they reinforce each other - your critical role leads to impactful contributions, which justify high compensation, which leads to being asked to judge others' work.</p>
 
-            <section class="mb-8">
-                <h2 class="text-2xl mb-6">1. Leading/Critical Role in Distinguished Organizations</h2>
-
-                <div class="evidence-box rounded-lg p-6 mb-6">
+            <section id="criterion-1" class="mb-8">
+                <div class="criterion-card criterion-1 evidence-box rounded-lg p-6">
+                <span class="criterion-label label-1">Criterion 1</span>
+                <h2 class="text-2xl mb-4">Leading/Critical Role in Distinguished Organizations</h2>
         <p class="text-gray-700 mb-4">This criterion has two parts you need to prove separately:</p>
         
-        <p class="text-gray-700 mb-4"><strong>Part 1: Your role is "leading" or "critical"</strong></p>
+        <div class="part-header">Part 1: Your role is "leading" or "critical"</div>
         <p class="text-gray-700 mb-4">I showed criticality through:</p>
         <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
             <li>Being the only engineer with end-to-end ownership of authentication features</li>
@@ -96,7 +222,7 @@
             <li>Impact on organizational outcomes - not just technical metrics but business results (user retention, revenue protection, market expansion)</li>
         </ul>
         
-        <p class="text-gray-700 mb-4"><strong>Part 2: The organization is "distinguished"</strong></p>
+        <div class="part-header">Part 2: The organization is "distinguished"</div>
         <p class="text-gray-700 mb-4">For tech companies, I showed this through:</p>
         <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
             <li>Market capitalization (e.g., "$2 trillion company")</li>
@@ -126,13 +252,13 @@
                 </div>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl mb-6">2. Original Contributions of Major Significance</h2>
-
-                <div class="evidence-box rounded-lg p-6 mb-6">
+            <section id="criterion-2" class="mb-8">
+                <div class="criterion-card criterion-2 evidence-box rounded-lg p-6">
+                <span class="criterion-label label-2">Criterion 2</span>
+                <h2 class="text-2xl mb-4">Original Contributions of Major Significance</h2>
         <p class="text-gray-700 mb-4">This criterion also has two parts that must be proven separately:</p>
         
-        <p class="text-gray-700 mb-4"><strong>Part 1: The contribution is "original"</strong></p>
+        <div class="part-header">Part 1: The contribution is "original"</div>
         <p class="text-gray-700 mb-4">I had to show that my solution was novel - either no one had solved this problem before, or at least not the way I did. For each contribution, I gave an 'elevator pitch' explaining:</p>
         <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
             <li>What made the problem previously unsolved (e.g., "bandwidth constraints made this impossible")</li>
@@ -141,7 +267,7 @@
             <li>Technical barriers I overcame (e.g., "previously considered insurmountable by industry experts")</li>
         </ul>
         
-        <p class="text-gray-700 mb-4"><strong>Part 2: The contribution has "major significance" to the field/industry</strong></p>
+        <div class="part-header">Part 2: The contribution has "major significance" to the field/industry</div>
         <p class="text-gray-700 mb-4">Importantly, this isn't just about your company's bottom line - it needs industry-wide or societal impact:</p>
         <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
             <li>Enabling capabilities for millions/billions of users globally</li>
@@ -172,10 +298,10 @@
                 </div>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl mb-6">3. High Salary/Remuneration</h2>
-
-                <div class="evidence-box rounded-lg p-6 mb-6">
+            <section id="criterion-3" class="mb-8">
+                <div class="criterion-card criterion-3 evidence-box rounded-lg p-6">
+                <span class="criterion-label label-3">Criterion 3</span>
+                <h2 class="text-2xl mb-4">High Salary/Remuneration</h2>
         <p class="text-gray-700 mb-4">My goal was demonstrating that the market valued my skills significantly above typical engineers at my level. I wasn't the highest paid, but I showed I was consistently in the top 10-20% which helped validate my expertise.</p>
 
         <p class="text-gray-700 mb-4"><strong>Evidence I provided:</strong></p>
@@ -205,10 +331,10 @@
                 </div>
             </section>
 
-            <section class="mb-8">
-                <h2 class="text-2xl mb-6">4. Judging Work of Others</h2>
-
-                <div class="evidence-box rounded-lg p-6 mb-6">
+            <section id="criterion-4" class="mb-8">
+                <div class="criterion-card criterion-4 evidence-box rounded-lg p-6">
+                <span class="criterion-label label-4">Criterion 4</span>
+                <h2 class="text-2xl mb-4">Judging Work of Others</h2>
         <p class="text-gray-700 mb-4">My understanding is that USCIS uses this criterion to determine if you're recognized as being at the top of your field - essentially, are you skilled enough that others seek your expertise to evaluate work in your domain? I learned that judging doesn't require being a full-time editor or competition judge. For the startup mentorship, I framed it as: founders came to me with their business and technical problems and asked me to review and provide feedback. Activities like this, along with reviewing technical books or conference papers, demonstrated that I was trusted to evaluate others' work in my field:</p>
         <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
             <li>Conference paper reviews</li>
@@ -239,7 +365,7 @@
             </section>
 
 
-            <section class="mb-8">
+            <section id="evidence" class="mb-8">
                 <h2 class="text-2xl mb-6">Evidence Collection</h2>
 
     <h3 class="text-xl font-medium mb-4 mt-8">Start Documentation NOW</h3>
@@ -290,7 +416,7 @@
     </ul>
 
 
-            <section class="mb-8">
+            <section id="corroboration" class="mb-8">
                 <h2 class="text-2xl mb-6">Independent Corroboration is Critical</h2>
                 
     <p class="text-gray-700 mb-4">One thing I learned: the government wants independent evidence corroborating what your reference letters claim. It's not enough for someone to say you did something amazing - you need documentation backing it up:</p>
@@ -303,7 +429,7 @@
     
     <p class="text-gray-700 mb-4">Every major claim in my reference letters had accompanying independent evidence. This made my case much stronger than letters alone.</p>
 
-            <section class="mb-8">
+            <section id="tips" class="mb-8">
                 <h2 class="text-2xl mb-6">Practical Tips Nobody Tells You</h2>
 
     <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-4">
@@ -318,7 +444,7 @@
         <li><strong>Your title doesn't define you.</strong> Manager letters describing your actual responsibilities and impact matter more than your official title.</li>
     </ol>
 
-            <section class="mb-8">
+            <section id="timeline" class="mb-8">
                 <h2 class="text-2xl mb-6">The Timeline and Cost Reality</h2>
 
     <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
@@ -328,7 +454,7 @@
         <li><strong>Total time:</strong> 6-8 months from start to approval</li>
     </ul>
 
-            <section class="mb-8">
+            <section id="worth-it" class="mb-8">
                 <h2 class="text-2xl mb-6">Was It Worth It?</h2>
 
     <p class="text-gray-700 mb-4">Absolutely. Beyond the green card, the process forced me to:</p>
@@ -341,7 +467,7 @@
 
     <p class="text-gray-700 mb-4">The exercise of building an EB-1A case is valuable even if you don't file. It's the ultimate career retrospective.</p>
 
-            <section class="mb-8">
+            <section id="final" class="mb-8">
                 <h2 class="text-2xl mb-6">Final Thoughts</h2>
 
     <p class="text-gray-700 mb-4">The EB-1A recognizes extraordinary ability across many forms. If you're a senior engineer or architect who's shipped features used by millions, solved hard technical problems, and been recognized by your peers, your industry impact carries real weight.</p>
@@ -354,11 +480,40 @@
 
         </article>
     </main>
+    </div>
 
     <footer class="border-t border-gray-200 mt-16 py-8">
         <div class="max-w-4xl mx-auto px-6">
             <p class="text-gray-600 italic text-center">Have questions about specific evidence or criteria? Send me an email at <a href="mailto:sanjaydevnani@gmail.com" class="text-teal-600 hover:underline">sanjaydevnani@gmail.com</a>. Remember: this is my experience, not legal advice. Always consult with an immigration attorney for your specific case.</p>
         </div>
     </footer>
+    
+    <script>
+        // Highlight active section in TOC
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocItems = document.querySelectorAll('.toc-item');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    currentSection = section.id;
+                }
+            });
+            
+            tocItems.forEach(item => {
+                if (item.getAttribute('href') === '#' + currentSection) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveSection);
+        updateActiveSection();
+    </script>
 </body>
 </html>
