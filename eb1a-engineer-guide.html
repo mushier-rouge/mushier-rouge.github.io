@@ -29,8 +29,20 @@
             font-weight: 500;
         }
         .key-insight {
-            background-color: #f0fdf4;
-            border-left: 4px solid #14B8A6;
+            background-color: #f9fafb;
+            border-left: 3px solid #6b7280;
+            position: relative;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+        .key-insight strong {
+            font-family: 'Inter', sans-serif;
+            color: #111827;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         .evidence-box {
             background-color: #fafafa;
@@ -91,6 +103,75 @@
         .label-3 { background: #ede9fe; color: #5b21b6; }
         .label-4 { background: #fed7aa; color: #92400e; }
         
+        /* Framing cards */
+        .framing-before {
+            background: #fef2f2;
+            border: 2px solid #fca5a5;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .framing-after {
+            background: #f0fdf4;
+            border: 2px solid #86efac;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .framing-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        .framing-before .framing-icon {
+            background: #dc2626;
+            color: white;
+        }
+        .framing-after .framing-icon {
+            background: #16a34a;
+            color: white;
+        }
+        .framing-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .framing-before .framing-label {
+            color: #991b1b;
+        }
+        .framing-after .framing-label {
+            color: #14532d;
+        }
+        .framing-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding-right: 3rem;
+        }
+        .framing-comparison {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .framing-arrow {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        
         /* Sticky sidebar TOC */
         .sidebar-toc {
             position: sticky;
@@ -126,7 +207,7 @@
         .toc-item.active {
             color: #14B8A6;
             border-left-color: #14B8A6;
-            font-weight: 500;
+            font-weight: 600;
         }
         .toc-section {
             font-weight: 600;
@@ -170,10 +251,10 @@
                 <div class="toc-section">Practical Advice</div>
                 <a href="#evidence" class="toc-item">Evidence Collection</a>
                 <a href="#corroboration" class="toc-item">Independent Corroboration</a>
-                <a href="#tips" class="toc-item">Practical Tips</a>
                 <a href="#timeline" class="toc-item">Timeline & Cost</a>
                 <a href="#worth-it" class="toc-item">Was It Worth It?</a>
                 <a href="#final" class="toc-item">Final Thoughts</a>
+                <a href="#resources" class="toc-item">Helpful Resources</a>
             </div>
         </aside>
         
@@ -188,7 +269,7 @@
             <section class="mb-8">
                 <p class="text-gray-700 mb-4">When I started my EB-1A journey, I found plenty of stories from researchers with 500+ citations and Nobel Prize winners. What I didn't find were stories from people like me - software engineers whose impact comes from shipping products that millions use daily. Industry practitioners can absolutely qualify through real engineering achievements at scale, solving critical technical challenges, and pushing the boundaries of what's possible in production systems.</p>
 
-                <p class="text-gray-700 mb-4"><strong>Important clarification:</strong> This guide is about documenting and presenting work you've already done - not about what you need to do to become qualified. If you're a senior engineer who's been shipping impactful work for years, you might already be at the top of your field. The challenge is proving it. This post shares how I collected evidence of my existing achievements and presented them effectively.</p>
+                <p class="text-gray-700 mb-4">This guide is about documenting and presenting work you've already done - not about what you need to do to become qualified. If you're a senior engineer who's been shipping impactful work for years, you might already be at the top of your field. The challenge is proving it. This post shares how I collected evidence of my existing achievements and presented them effectively.</p>
             </section>
 
             <section id="reality-check" class="mb-8">
@@ -241,13 +322,15 @@
             <li>Reference letters using language like "critical," "essential," "only engineer who could..."</li>
         </ul>
 
-                <div class="key-insight p-4 rounded-lg my-4">
-            <strong>Language patterns from my reference letters:</strong><br>
-            • "[Name] was the only engineer with full ownership of [critical system]"<br>
-            • "Their role could not be reassigned without compromising [important outcome]"<br>
-            • "One of [small number] engineers trusted with [critical responsibility]"<br>
-            • "Very few others had the same breadth of responsibility or depth of technical control"<br>
-            • "Without [Name]'s contributions, [specific negative consequence] would occur"
+                <div class="key-insight p-4 rounded-sm my-4">
+            <strong>Language patterns from my reference letters</strong>
+            <div class="mt-3 space-y-1">
+                <div>• "[Name] was the only engineer with full ownership of [critical system]"</div>
+                <div>• "Their role could not be reassigned without compromising [important outcome]"</div>
+                <div>• "One of [small number] engineers trusted with [critical responsibility]"</div>
+                <div>• "Very few others had the same breadth of responsibility or depth of technical control"</div>
+                <div>• "Without [Name]'s contributions, [specific negative consequence] would occur"</div>
+            </div>
                 </div>
                 </div>
             </section>
@@ -287,13 +370,15 @@
             <li>Evidence my work "provoked widespread commentary" - industry blogs discussing it, consumers talking about it on social media, Reddit/HackerNews threads analyzing the features</li>
         </ul>
 
-                <div class="key-insight p-4 rounded-lg my-4">
-            <strong>How I framed my impact in the petition:</strong><br>
-            • "First [platform/company] to achieve [specific benchmark] without [typical requirement]"<br>
-            • "Eliminated $[X] per unit cost while enabling [critical capability] for [scale of users]"<br>
-            • "Previously considered [impossible/insurmountable] by industry experts"<br>
-            • "Enabled [measurable outcome] across [geographic or user scope]"<br>
-            • "Reduced [metric] by [percentage] while improving [other metric]"
+                <div class="key-insight p-4 rounded-sm my-4">
+            <strong>How I framed my impact in the petition</strong>
+            <div class="mt-3 space-y-1">
+                <div>• "First [platform/company] to achieve [specific benchmark] without [typical requirement]"</div>
+                <div>• "Eliminated $[X] per unit cost while enabling [critical capability] for [scale of users]"</div>
+                <div>• "Previously considered [impossible/insurmountable] by industry experts"</div>
+                <div>• "Enabled [measurable outcome] across [geographic or user scope]"</div>
+                <div>• "Reduced [metric] by [percentage] while improving [other metric]"</div>
+            </div>
                 </div>
                 </div>
             </section>
@@ -320,13 +405,15 @@
             <li>Framed it as "market validation of rare expertise"</li>
         </ul>
 
-                <div class="key-insight p-4 rounded-lg my-4">
-            <strong>How I framed my compensation comparisons:</strong><br>
-            • "Compensation significantly higher than the national benchmark for this role"<br>
-            • "Well above the location-specific 90th percentile"<br>
-            • "Consistently in the top tier for [your role level]"<br>
-            • "Sustained above-market earning capacity demonstrates rarity of expertise"<br>
-            • Compare against multiple sources (BLS, Salary.com, location-specific data)
+                <div class="key-insight p-4 rounded-sm my-4">
+            <strong>How I framed my compensation comparisons</strong>
+            <div class="mt-3 space-y-1">
+                <div>• "Compensation significantly higher than the national benchmark for this role"</div>
+                <div>• "Well above the location-specific 90th percentile"</div>
+                <div>• "Consistently in the top tier for [your role level]"</div>
+                <div>• "Sustained above-market earning capacity demonstrates rarity of expertise"</div>
+                <div>• Compare against multiple sources (BLS, Salary.com, location-specific data)</div>
+            </div>
                 </div>
                 </div>
             </section>
@@ -353,13 +440,15 @@
             <li>Documentation from companies/conferences confirming my participation - not just invitations, but proof I actually did the judging</li>
         </ul>
 
-                <div class="key-insight p-4 rounded-lg my-4">
-            <strong>What my reviewers emphasized:</strong><br>
-            • Quality of my technical feedback<br>
-            • Specific improvements I suggested<br>
-            • How my input shaped final outcomes<br>
-            • My role in mentoring or guiding others<br>
-            • The expertise required to provide such reviews
+                <div class="key-insight p-4 rounded-sm my-4">
+            <strong>What my reviewers emphasized</strong>
+            <div class="mt-3 space-y-1">
+                <div>• Quality of my technical feedback</div>
+                <div>• Specific improvements I suggested</div>
+                <div>• How my input shaped final outcomes</div>
+                <div>• My role in mentoring or guiding others</div>
+                <div>• The expertise required to provide such reviews</div>
+            </div>
                 </div>
                 </div>
             </section>
@@ -402,10 +491,22 @@
 
     <h3 class="text-xl font-medium mb-4 mt-8">Framing is Everything</h3>
     <p class="text-gray-700 mb-4">Here's how I learned to frame the same work differently:</p>
-    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                <li><span class="text-red-500 line-through">❌ "Implemented security features for mobile devices"</span></li>
-                <li><span class="text-green-600">✅ "Designed and secured the encryption protocols enabling satellite-based emergency messaging on smartphones, a capability that has documented life-saving impact and was previously considered technically infeasible due to bandwidth constraints"</span></li>
-    </ul>
+    
+    <div class="framing-comparison">
+        <div class="framing-before">
+            <div class="framing-icon">✕</div>
+            <div class="framing-label">Before - Generic Description</div>
+            <div class="framing-text">"Implemented security features for mobile devices"</div>
+        </div>
+        
+        <div class="framing-arrow">↓</div>
+        
+        <div class="framing-after">
+            <div class="framing-icon">✓</div>
+            <div class="framing-label">After - Impact-Focused Framing</div>
+            <div class="framing-text">"Designed and secured the encryption protocols enabling satellite-based emergency messaging on smartphones, a capability that has documented life-saving impact and was previously considered technically infeasible due to bandwidth constraints"</div>
+        </div>
+    </div>
 
     <p class="text-gray-700 mb-4">I made sure every achievement included:</p>
     <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
@@ -429,27 +530,13 @@
     
     <p class="text-gray-700 mb-4">Every major claim in my reference letters had accompanying independent evidence. This made my case much stronger than letters alone.</p>
 
-            <section id="tips" class="mb-8">
-                <h2 class="text-2xl mb-6">Practical Tips Nobody Tells You</h2>
-
-    <ol class="list-decimal list-inside text-gray-700 space-y-2 mb-4">
-        <li><strong>Public contributions help, but most work is proprietary.</strong> I pointed to open source repositories where I could, but the reality is that most of my impactful work at large tech companies was proprietary and confidential. I couldn't share code or technical designs. For these contributions, the detailed letters from my managers describing the business and technical impact were absolutely essential to bridge that gap.</li>
-        
-        <li><strong>Media coverage counts.</strong> Set up Google Alerts for features you work on. Save every article, even if it doesn't mention you by name.</li>
-        
-        <li><strong>Internal awards matter.</strong> Those peer bonuses and spot awards? They became evidence of "recognition for achievements."</li>
-        
-        <li><strong>Patent applications count, even if pending.</strong> That provisional patent gathering dust? Evidence of original contributions.</li>
-        
-        <li><strong>Your title doesn't define you.</strong> Manager letters describing your actual responsibilities and impact matter more than your official title.</li>
-    </ol>
 
             <section id="timeline" class="mb-8">
                 <h2 class="text-2xl mb-6">The Timeline and Cost Reality</h2>
 
     <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
         <li><strong>Evidence gathering:</strong> 3-4 months (the hardest part)</li>
-        <li><strong>Legal fees:</strong> $15-20k for a good attorney (worth it - don't DIY)</li>
+        <li><strong>Legal fees:</strong> $15-20k for a good attorney (though DIY is possible if you thoroughly understand USCIS requirements)</li>
         <li><strong>Government fees:</strong> ~$5k including premium processing</li>
         <li><strong>Total time:</strong> 6-8 months from start to approval</li>
     </ul>
@@ -477,6 +564,18 @@
     <p class="text-gray-700 mb-4">The key isn't being extraordinary by impossible standards - it's being able to prove you're extraordinary by the standards that matter: impact, recognition, and contribution to your field.</p>
 
     <p class="text-gray-700 mb-4"><strong>Start documenting now. Your future self will thank you.</strong></p>
+
+            </section>
+            
+            <section id="resources" class="mb-8">
+                <h2 class="text-2xl mb-6">Helpful Resources</h2>
+                
+    <p class="text-gray-700 mb-4">Here are some resources I found valuable during my EB-1A journey:</p>
+    
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li><a href="https://debarghyadas.com/writes/eb1-ultimate-guide/" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline">The Ultimate EB-1 Guide by Debarghya Das</a> - Comprehensive guide with detailed examples and strategies</li>
+        <li><a href="https://writing.nikunjk.com/p/permanent-residency" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline">Permanent Residency Guide by Nikunj K</a> - Another tech professional's perspective on the EB-1A process</li>
+    </ul>
 
         </article>
     </main>
